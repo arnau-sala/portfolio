@@ -26,8 +26,114 @@ export default function HomePage() {
   };
 
   useEffect(() => {
+    // Intersection Observer for section-based animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    };
 
-    // Simple scroll-triggered animations for other sections (not About Me)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target;
+          
+          // Add animation trigger class to the section
+          section.classList.add('section-visible');
+          
+          // Trigger specific animations based on section
+          if (section.id === 'skills') {
+            // Skills section animations
+            setTimeout(() => {
+              const skillsTitle = section.querySelector('.skills-title');
+              if (skillsTitle) skillsTitle.classList.add('animate');
+            }, 100);
+            
+            setTimeout(() => {
+              const mainSection = section.querySelector('.skills-main-section');
+              const additionalSection = section.querySelector('.skills-additional-section');
+              if (mainSection) mainSection.classList.add('animate');
+              if (additionalSection) additionalSection.classList.add('animate');
+            }, 300);
+            
+            // Animate individual skills with stagger
+            setTimeout(() => {
+              const skillItems = section.querySelectorAll('.skill-item');
+              skillItems.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add('animate');
+                }, index * 100);
+              });
+            }, 500);
+            
+            // Progress bars
+            setTimeout(() => {
+              const progressBars = section.querySelectorAll('.skill-progress-main, .skill-progress-additional');
+              progressBars.forEach((bar, index) => {
+                setTimeout(() => {
+                  bar.classList.add('animate');
+                }, index * 200);
+              });
+            }, 800);
+          }
+          
+          if (section.id === 'projects') {
+            // Projects section animations
+            setTimeout(() => {
+              const title = section.querySelector('.projects-title');
+              const description = section.querySelector('.projects-description');
+              if (title) title.classList.add('animate');
+              if (description) description.classList.add('animate');
+            }, 100);
+            
+            setTimeout(() => {
+              const projects = section.querySelectorAll('.project-card');
+              projects.forEach((project, index) => {
+                setTimeout(() => {
+                  project.classList.add('animate');
+                }, index * 150);
+              });
+            }, 400);
+          }
+          
+          if (section.id === 'about') {
+            // About section animations
+            setTimeout(() => {
+              const elements = section.querySelectorAll('.about-image-container, .about-text-content, .about-education-card');
+              elements.forEach((element, index) => {
+                setTimeout(() => {
+                  element.classList.add('animate');
+                }, index * 200);
+              });
+            }, 100);
+          }
+          
+          if (section.id === 'contact') {
+            // Contact section animations
+            setTimeout(() => {
+              const title = section.querySelector('.contact-title');
+              const description = section.querySelector('.contact-description');
+              if (title) title.classList.add('animate');
+              if (description) description.classList.add('animate');
+            }, 100);
+            
+            setTimeout(() => {
+              const cards = section.querySelectorAll('.contact-card');
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('animate');
+                }, index * 150);
+              });
+            }, 300);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all main sections
+    const sections = document.querySelectorAll('#about, #skills, #projects, #contact');
+    sections.forEach((section) => observer.observe(section));
+
+    // Simple scroll-triggered animations for other elements
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-scroll, .slide-in-left-scroll, .slide-in-up-scroll, .slide-in-right-scroll');
       
@@ -47,7 +153,10 @@ export default function HomePage() {
     // Add scroll listener
     window.addEventListener('scroll', handleScroll);
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   // Show loading spinner while translations are loading
