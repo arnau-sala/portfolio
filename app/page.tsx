@@ -6,9 +6,13 @@ import { useLanguage } from '../src/contexts/LanguageContext';
 import { getAssetPath } from '../src/utils/paths';
 
 export default function HomePage() {
-  const { t, isLoading } = useLanguage();
+  const { t, isLoading, currentLanguage } = useLanguage();
   
-  // Función para scroll suave a secciones
+  // Function to get the correct resume based on current language
+  const getResumeUrl = () => {
+    return getAssetPath(`/Resume/resume_${currentLanguage}.pdf`);
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -28,8 +32,8 @@ export default function HomePage() {
   useEffect(() => {
     // Intersection Observer for section-based animations
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -10% 0px'
+      threshold: 0.15, // More sensitive - 15% visible
+      rootMargin: '0px 0px -5% 0px' // Less strict margin
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -40,90 +44,67 @@ export default function HomePage() {
           // Add animation trigger class to the section
           section.classList.add('section-visible');
           
-          // Trigger specific animations based on section
-          if (section.id === 'skills') {
-            // Skills section animations
-            setTimeout(() => {
-              const skillsTitle = section.querySelector('.skills-title');
-              if (skillsTitle) skillsTitle.classList.add('animate');
-            }, 100);
-            
-            setTimeout(() => {
-              const mainSection = section.querySelector('.skills-main-section');
-              const additionalSection = section.querySelector('.skills-additional-section');
-              if (mainSection) mainSection.classList.add('animate');
-              if (additionalSection) additionalSection.classList.add('animate');
-            }, 300);
-            
-            // Animate individual skills with stagger
-            setTimeout(() => {
-              const skillItems = section.querySelectorAll('.skill-item');
-              skillItems.forEach((item, index) => {
-                setTimeout(() => {
-                  item.classList.add('animate');
-                }, index * 100);
-              });
-            }, 500);
-            
-            // Progress bars
-            setTimeout(() => {
-              const progressBars = section.querySelectorAll('.skill-progress-main, .skill-progress-additional');
-              progressBars.forEach((bar, index) => {
-                setTimeout(() => {
-                  bar.classList.add('animate');
-                }, index * 200);
-              });
-            }, 800);
-          }
-          
-          if (section.id === 'projects') {
-            // Projects section animations
-            setTimeout(() => {
-              const title = section.querySelector('.projects-title');
-              const description = section.querySelector('.projects-description');
-              if (title) title.classList.add('animate');
-              if (description) description.classList.add('animate');
-            }, 100);
-            
-            setTimeout(() => {
-              const projects = section.querySelectorAll('.project-card');
-              projects.forEach((project, index) => {
-                setTimeout(() => {
-                  project.classList.add('animate');
-                }, index * 150);
-              });
-            }, 400);
-          }
-          
+          // Special handling for About section - simultaneous animations
           if (section.id === 'about') {
-            // About section animations
-            setTimeout(() => {
-              const elements = section.querySelectorAll('.about-image-container, .about-text-content, .about-education-card');
-              elements.forEach((element, index) => {
-                setTimeout(() => {
-                  element.classList.add('animate');
-                }, index * 200);
-              });
-            }, 100);
+            console.log('About section intersecting, activating animations...');
+            // Only animate if not already animated
+            const aboutElements = section.querySelectorAll('.about-title, .about-image-container, .about-text-content, .about-education-card');
+            console.log('Found elements to animate:', aboutElements.length);
+            aboutElements.forEach((element) => {
+              if (!element.classList.contains('animate')) {
+                // All elements animate simultaneously (no delay)
+                element.classList.add('animate');
+                console.log('Animated:', element.className);
+              }
+            });
+          } 
+          // Special handling for Skills section - simultaneous animations
+          else if (section.id === 'skills') {
+            console.log('Skills section intersecting, activating animations...');
+            const skillsElements = section.querySelectorAll('.skills-title, .skills-main-section, .skills-additional-section');
+            console.log('Found skills elements to animate:', skillsElements.length);
+            skillsElements.forEach((element) => {
+              if (!element.classList.contains('animate')) {
+                // All elements animate simultaneously (no delay)
+                element.classList.add('animate');
+                console.log('Animated skills element:', element.className);
+              }
+            });
           }
-          
-          if (section.id === 'contact') {
-            // Contact section animations
-            setTimeout(() => {
-              const title = section.querySelector('.contact-title');
-              const description = section.querySelector('.contact-description');
-              if (title) title.classList.add('animate');
-              if (description) description.classList.add('animate');
-            }, 100);
+          // Special handling for Projects section - simultaneous animations
+          else if (section.id === 'projects') {
+            console.log('Projects section intersecting, activating animations...');
+            const projectsElements = section.querySelectorAll('.projects-title, .projects-description, .project-card');
+            console.log('Found projects elements to animate:', projectsElements.length);
+            projectsElements.forEach((element) => {
+              if (!element.classList.contains('animate')) {
+                // All elements animate simultaneously (no delay)
+                element.classList.add('animate');
+                console.log('Animated projects element:', element.className);
+              }
+            });
+          }
+          // Special handling for Contact section - simultaneous animations
+          else if (section.id === 'contact') {
+            console.log('Contact section intersecting, activating animations...');
+            const contactElements = section.querySelectorAll('.contact-title, .contact-description, .contact-email, .contact-linkedin, .contact-github');
+            console.log('Found contact elements to animate:', contactElements.length);
+            contactElements.forEach((element) => {
+              if (!element.classList.contains('animate')) {
+                // All elements animate simultaneously (no delay)
+                element.classList.add('animate');
+                console.log('Animated contact element:', element.className);
+              }
+            });
+          } else {
+            // Other sections keep the staggered animation
+            const animatableElements = section.querySelectorAll('.skills-title, .skills-main-section, .skills-additional-section, .projects-title, .projects-description, .project-card, .contact-title, .contact-description, .contact-card, .skill-item, .skill-progress-main, .skill-progress-additional');
             
-            setTimeout(() => {
-              const cards = section.querySelectorAll('.contact-card');
-              cards.forEach((card, index) => {
-                setTimeout(() => {
-                  card.classList.add('animate');
-                }, index * 150);
-              });
-            }, 300);
+            animatableElements.forEach((element, index) => {
+              setTimeout(() => {
+                element.classList.add('animate');
+              }, index * 100); // Stagger the animations slightly
+            });
           }
         }
       });
@@ -145,10 +126,78 @@ export default function HomePage() {
           element.classList.add('animate');
         }
       });
+
+      // Additional check for About section in case Intersection Observer misses it
+      const aboutSection = document.querySelector('#about');
+      if (aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        // Trigger when section header is visible (change of background color)
+        const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+        
+        if (isVisible) {
+          const aboutElements = aboutSection.querySelectorAll('.about-title, .about-image-container, .about-text-content, .about-education-card');
+          aboutElements.forEach((element) => {
+            if (!element.classList.contains('animate')) {
+              element.classList.add('animate');
+            }
+          });
+        }
+      }
+
+      // Additional check for Skills section
+      const skillsSection = document.querySelector('#skills');
+      if (skillsSection) {
+        const rect = skillsSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+        
+        if (isVisible) {
+          const skillsElements = skillsSection.querySelectorAll('.skills-title, .skills-main-section, .skills-additional-section');
+          skillsElements.forEach((element) => {
+            if (!element.classList.contains('animate')) {
+              element.classList.add('animate');
+            }
+          });
+        }
+      }
+
+      // Additional check for Projects section
+      const projectsSection = document.querySelector('#projects');
+      if (projectsSection) {
+        const rect = projectsSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+        
+        if (isVisible) {
+          const projectsElements = projectsSection.querySelectorAll('.projects-title, .projects-description, .project-card');
+          projectsElements.forEach((element) => {
+            if (!element.classList.contains('animate')) {
+              element.classList.add('animate');
+            }
+          });
+        }
+      }
+
+      // Additional check for Contact section
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+        
+        if (isVisible) {
+          const contactElements = contactSection.querySelectorAll('.contact-title, .contact-description, .contact-email, .contact-linkedin, .contact-github');
+          contactElements.forEach((element) => {
+            if (!element.classList.contains('animate')) {
+              element.classList.add('animate');
+            }
+          });
+        }
+      }
     };
 
     // Initial check
     handleScroll();
+    
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
     
     // Add scroll listener
     window.addEventListener('scroll', handleScroll);
@@ -226,7 +275,7 @@ export default function HomePage() {
                 {t('hero.viewProjects')}
               </button>
               <a
-                href="/portfolio/cv/Arnau_Sala_CV.pdf"
+                href={getResumeUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105"
@@ -248,7 +297,7 @@ export default function HomePage() {
       <section id="about" className="py-20 bg-gray-800/50">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">{t('about.title')}</h2>
+            <h2 className="about-title text-3xl md:text-4xl font-bold mb-16 text-center">{t('about.title')}</h2>
             
             <div className="grid lg:grid-cols-3 gap-12 items-center justify-items-center">
               {/* Profile Image */}
@@ -303,11 +352,11 @@ export default function HomePage() {
 
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="skills-title text-3xl md:text-4xl font-bold mb-12 text-center">{t('skills.title')}</h2>
             
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
               <div className="skills-main-section space-y-8">
                 <h3 className="skills-main-title text-2xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
                   <img src={getAssetPath('/icons/main.png')} alt="Target" className="w-8 h-8" />

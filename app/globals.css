@@ -113,32 +113,51 @@ body {
   animation: slideInUp 0.8s ease-out 0.6s both;
 }
 
-/* About Section Animations - Simple and immediate */
-.about-image-container, .about-text-content, .about-education-card {
-  opacity: 1; /* Visible by default */
-  transform: translateY(0); /* No transform by default */
-  transition: all 0.6s ease-out;
+/* About Section Animations */
+/* Estado inicial - elementos ocultos fuera de posición */
+.about-title {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-/* Only animate when triggered by intersection */
-.about-image-container:not(.animate) {
-  opacity: 0.3;
-  transform: translateY(20px);
+.about-text-content {
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.about-text-content:not(.animate) {
-  opacity: 0.3;
-  transform: translateY(20px);
+.about-image-container {
+  opacity: 0 !important;
+  transform: translateX(-60px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.about-education-card:not(.animate) {
-  opacity: 0.3;
-  transform: translateY(20px);
+.about-education-card {
+  opacity: 0 !important;
+  transform: translateX(60px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.about-image-container.animate, .about-text-content.animate, .about-education-card.animate {
-  opacity: 1;
-  transform: translateY(0);
+/* Estados animados - cuando tienen clase .animate */
+.about-title.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-text-content.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-image-container.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.about-education-card.animate {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* Hero Section Entrance Animations */
@@ -157,7 +176,6 @@ body {
   font-size: 40px;
   font-family: inherit;
   text-transform: uppercase;
-  /* Gradiente guardado sin sombra (todo blanco al final): linear-gradient(90deg, #000, #fff, #fff, #fff, #fff) */
   background: linear-gradient(90deg, #fff, #fff, #000);
   letter-spacing: 5px;
   -webkit-background-clip: text;
@@ -320,103 +338,59 @@ body {
   }
 }
 
-/* Skills Section Animations - Content visible by default */
+/* Skills Section Animations */
+/* Estado inicial - elementos ocultos fuera de posición */
 .skills-title {
-  opacity: 1; /* Visible by default */
-  transform: translateY(0);
-  transition: all 0.6s ease-out;
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.skills-title:not(.animate) {
-  opacity: 0.4;
-  transform: translateY(15px);
+.skills-main-section {
+  opacity: 0 !important;
+  transform: translateY(-50px) !important; /* Baja de arriba a abajo */
+  transition: all 0.8s ease-out !important;
 }
 
+.skills-additional-section {
+  opacity: 0 !important;
+  transform: translateY(50px) !important; /* Sube de abajo a arriba */
+  transition: all 0.8s ease-out !important;
+}
+
+/* Estados animados - cuando tienen clase .animate */
 .skills-title.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.skills-main-section, .skills-additional-section {
-  opacity: 1; /* Visible by default */
-  transition: all 0.8s ease-out;
-}
-
-.skills-main-section:not(.animate) {
-  opacity: 0.4;
-  transform: translateX(-20px);
-}
-
-.skills-additional-section:not(.animate) {
-  opacity: 0.4;
-  transform: translateX(20px);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .skills-main-section.animate {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .skills-additional-section.animate {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .skills-main-title, .skills-additional-title {
-  opacity: 1; /* Visible by default */
-  transition: all 0.6s ease-out;
-}
-
-.skills-main-title:not(.animate) {
-  opacity: 0.4;
-  transform: translateX(-15px);
-}
-
-.skills-additional-title:not(.animate) {
-  opacity: 0.4;
-  transform: translateX(15px);
-}
-
-.skills-main-title.animate, .skills-additional-title.animate {
-  opacity: 1;
+  opacity: 1; /* Fully visible */
   transform: translateX(0);
+  transition: all 0.6s ease-out;
 }
 
 /* Individual skill items */
 .skill-item {
-  opacity: 1; /* Visible by default */
-  transition: all 0.6s ease-out;
-}
-
-.skill-item:not(.animate) {
-  opacity: 0.4;
-}
-
-.skills-main-section .skill-item:not(.animate) {
-  transform: translateX(-15px);
-}
-
-.skills-additional-section .skill-item:not(.animate) {
-  transform: translateX(15px);
-}
-
-.skill-item.animate {
-  opacity: 1;
+  opacity: 1; /* Fully visible */
   transform: translateX(0);
+  transition: all 0.6s ease-out;
 }
 
 /* Progress bar animations */
 .skill-progress-main, .skill-progress-additional {
   width: var(--progress); /* Full width by default */
   transition: width 1.5s ease-out;
-}
-
-.skill-progress-main:not(.animate), .skill-progress-additional:not(.animate) {
-  width: 10%; /* Minimal width when not animated */
-}
-
-.skill-progress-main.animate, .skill-progress-additional.animate {
-  width: var(--progress);
 }
 
 @keyframes progressBarMain {
@@ -433,69 +407,68 @@ body {
 
 /* Contact Section Animations */
 .contact-title, .contact-description {
-  opacity: 1; /* Visible by default */
+  opacity: 1; /* Fully visible */
   transform: translateY(0);
   transition: all 0.8s ease-out;
 }
 
-.contact-title:not(.animate), .contact-description:not(.animate) {
-  opacity: 0.4;
-  transform: translateY(15px);
-}
-
-.contact-title.animate, .contact-description.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .contact-card {
-  opacity: 1; /* Visible by default */
+  opacity: 1; /* Fully visible */
   transform: translateY(0) scale(1);
   transition: all 0.6s ease-out;
 }
 
-.contact-card:not(.animate) {
-  opacity: 0.4;
-  transform: translateY(20px) scale(0.98);
-}
-
-.contact-card.animate {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
 /* Projects Section Animations */
-.projects-title, .projects-description {
-  opacity: 1; /* Visible by default */
-  transform: translateY(0);
-  transition: all 0.8s ease-out;
+/* Estado inicial - elementos ocultos con blur */
+.projects-title {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.projects-title:not(.animate), .projects-description:not(.animate) {
-  opacity: 0.4;
-  transform: translateY(15px);
+.projects-description {
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.projects-title.animate, .projects-description.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Individual project cards */
+/* Individual project cards with diagonal cascade animation */
 .project-card {
-  opacity: 1; /* Visible by default */
-  transform: translateY(0) rotateX(0deg);
-  transition: all 0.8s ease-out;
+  opacity: 0 !important;
+  transition: all 0.8s ease-out !important;
 }
 
-.project-card:not(.animate) {
-  opacity: 0.4;
-  transform: translateY(25px) rotateX(10deg);
+/* Diagonal positions for each project */
+.project-0 {
+  transform: translateX(-80px) translateY(-40px) !important; /* Superior izquierda */
+}
+
+.project-1 {
+  transform: translateX(80px) translateY(-40px) !important; /* Superior derecha */
+}
+
+.project-2 {
+  transform: translateX(-80px) translateY(40px) !important; /* Inferior izquierda */
+}
+
+.project-3 {
+  transform: translateX(80px) translateY(40px) !important; /* Inferior derecha */
+}
+
+/* Estados animados - cuando tienen clase .animate */
+.projects-title.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.projects-description.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .project-card.animate {
-  opacity: 1;
-  transform: translateY(0) rotateX(0deg);
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
 }
 
 /* Project card entrance animation */
@@ -511,25 +484,62 @@ body {
 }
 
 /* Contact Section Animations */
+/* Estado inicial - elementos ocultos en sus posiciones de entrada */
 .contact-title {
-  animation: contactTitleEntrance 1.2s ease-out 10.5s both;
+  opacity: 0 !important;
+  transform: translateY(-30px) scale(0.9) !important;
+  transition: all 1.2s ease-out !important;
 }
 
 .contact-description {
-  animation: contactDescFadeIn 1s ease-out 11s both;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  transition: all 1s ease-out !important;
 }
 
-/* Contact cards with directional entrances */
+/* Contact cards with directional initial positions */
 .contact-email {
-  animation: slideInFromTopLeft 0.8s ease-out 11.5s both;
+  opacity: 0 !important;
+  transform: translate(-40px, -40px) rotate(-10deg) scale(0.8) !important;
+  transition: all 0.8s ease-out !important;
 }
 
 .contact-linkedin {
-  animation: slideInFromTop 0.8s ease-out 11.8s both;
+  opacity: 0 !important;
+  transform: translateY(-50px) scale(0.8) !important;
+  transition: all 0.8s ease-out !important;
 }
 
 .contact-github {
-  animation: slideInFromTopRight 0.8s ease-out 12.1s both;
+  opacity: 0 !important;
+  transform: translate(40px, -40px) rotate(10deg) scale(0.8) !important;
+  transition: all 0.8s ease-out !important;
+}
+
+/* Estados animados - cuando tienen clase .animate */
+.contact-title.animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.contact-description.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.contact-email.animate {
+  opacity: 1 !important;
+  transform: translate(0, 0) rotate(0deg) scale(1) !important;
+}
+
+.contact-linkedin.animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.contact-github.animate {
+  opacity: 1 !important;
+  transform: translate(0, 0) rotate(0deg) scale(1) !important;
 }
 
 /* Contact entrance animations */
