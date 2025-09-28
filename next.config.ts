@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/portfolio'
+  // basePath: '/portfolio' // Comentado para desarrollo local
 };
 
 export default nextConfig;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "../src/contexts/LanguageContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Arnau Sala Araujo - Portfolio",
+  title: "Portfolio - Arnau Sala",
   description: "Computer Science Student | Java, Python, C, C++ Developer | Barcelona, Spain",
 };
 
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

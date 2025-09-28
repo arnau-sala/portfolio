@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -106,4 +111,370 @@ body {
 
 .animate-slide-in-up {
   animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+/* About Me Animations with CSS Animation Delays */
+.about-image-container {
+  animation: slideInFromLeft 1.2s ease-out 3.5s both;
+}
+
+.about-text-content {
+  animation: slideInFromBottom 1s ease-out 4s both;
+}
+
+.about-education-card {
+  animation: slideInFromRight 1.2s ease-out 4.5s both;
+}
+
+/* Hero Section Entrance Animations */
+.hero-background {
+  animation: backgroundFadeIn 1.5s ease-out both;
+}
+
+.hero-greeting {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Efecto shine - gradiente con zona blanca extendida */
+.hero-name-shine {
+  font-weight: 700;
+  text-align: center;
+  font-size: 40px;
+  font-family: inherit;
+  text-transform: uppercase;
+  /* Gradiente guardado sin sombra (todo blanco al final): linear-gradient(90deg, #000, #fff, #fff, #fff, #fff) */
+  background: linear-gradient(90deg, #fff, #fff, #000);
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shineCut 2s ease-out forwards;
+  position: relative;
+}
+
+@keyframes shineCut {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 130%;
+  }
+}
+
+.name-letter {
+  display: inline-block;
+  opacity: 1; /* Temporalmente visible para debugging */
+  transform: translateY(0px); /* Sin desplazamiento inicial */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  color: white; /* Asegurar que sea blanco */
+}
+
+.name-letter.letter-appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typing-cursor {
+  display: inline-block;
+  opacity: 1;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.hero-title {
+  animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+.hero-description {
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+.hero-location {
+  animation: fadeInUp 0.8s ease-out 1.5s both;
+}
+
+/* Animaciones específicas para el pin y el texto de ubicación */
+.location-pin {
+  animation: slideInFromTop 0.8s ease-out 1.5s both;
+}
+
+.location-text {
+  animation: slideInFromBottom 0.8s ease-out 1.5s both;
+}
+
+.hero-buttons {
+  animation: buttonsSlideScale 1s ease-out 1.8s both;
+}
+
+/* Hero Animation Keyframes */
+@keyframes backgroundFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonsSlideScale {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px) scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skills Section Animations */
+.skills-title {
+  animation: fadeIn 1.2s ease-out 5.5s both;
+}
+
+.skills-main-section {
+  animation: slideInFromLeft 1s ease-out 6s both;
+}
+
+.skills-additional-section {
+  animation: slideInFromRight 1s ease-out 6.5s both;
+}
+
+.skills-main-title {
+  animation: slideInFromLeft 0.8s ease-out 6.7s both;
+}
+
+.skills-additional-title {
+  animation: slideInFromRight 0.8s ease-out 7.2s both;
+}
+
+/* Individual skill items with staggered animation */
+.skill-main-0 { animation: slideInFromLeft 0.6s ease-out 7s both; }
+.skill-main-1 { animation: slideInFromLeft 0.6s ease-out 7.2s both; }
+.skill-main-2 { animation: slideInFromLeft 0.6s ease-out 7.4s both; }
+.skill-main-3 { animation: slideInFromLeft 0.6s ease-out 7.6s both; }
+
+.skill-additional-0 { animation: slideInFromRight 0.6s ease-out 7.5s both; }
+.skill-additional-1 { animation: slideInFromRight 0.6s ease-out 7.7s both; }
+.skill-additional-2 { animation: slideInFromRight 0.6s ease-out 7.9s both; }
+.skill-additional-3 { animation: slideInFromRight 0.6s ease-out 8.1s both; }
+.skill-additional-4 { animation: slideInFromRight 0.6s ease-out 8.3s both; }
+.skill-additional-5 { animation: slideInFromRight 0.6s ease-out 8.5s both; }
+
+/* Progress bar animations */
+.skill-progress-main {
+  width: 0;
+  animation: progressBarMain 1.5s ease-out 7.5s both;
+}
+
+.skill-progress-additional {
+  width: 0;
+  animation: progressBarAdditional 1.5s ease-out 8s both;
+}
+
+@keyframes progressBarMain {
+  to {
+    width: var(--progress);
+  }
+}
+
+@keyframes progressBarAdditional {
+  to {
+    width: var(--progress);
+  }
+}
+
+/* Projects Section Animations */
+.projects-title {
+  animation: slideInFromBottom 1s ease-out 8s both;
+}
+
+.projects-description {
+  animation: fadeIn 1s ease-out 8.5s both;
+}
+
+/* Individual project cards with scaling and rotation effects */
+.project-0 {
+  animation: projectSlideIn 0.8s ease-out 9s both;
+}
+
+.project-1 {
+  animation: projectSlideIn 0.8s ease-out 9.3s both;
+}
+
+.project-2 {
+  animation: projectSlideIn 0.8s ease-out 9.6s both;
+}
+
+.project-3 {
+  animation: projectSlideIn 0.8s ease-out 9.9s both;
+}
+
+/* Project card entrance animation */
+@keyframes projectSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotateX(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Contact Section Animations */
+.contact-title {
+  animation: contactTitleEntrance 1.2s ease-out 10.5s both;
+}
+
+.contact-description {
+  animation: contactDescFadeIn 1s ease-out 11s both;
+}
+
+/* Contact cards with directional entrances */
+.contact-email {
+  animation: slideInFromTopLeft 0.8s ease-out 11.5s both;
+}
+
+.contact-linkedin {
+  animation: slideInFromTop 0.8s ease-out 11.8s both;
+}
+
+.contact-github {
+  animation: slideInFromTopRight 0.8s ease-out 12.1s both;
+}
+
+/* Contact entrance animations */
+@keyframes contactTitleEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes contactDescFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Directional slide-ins for contact cards */
+@keyframes slideInFromTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-40px, -40px) rotate(-10deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInFromTopRight {
+  from {
+    opacity: 0;
+    transform: translate(40px, -40px) rotate(10deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
 }

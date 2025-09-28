@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "about": "About",
+    "skills": "Skills", 
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Computer Science Student",
+    "description": "Passionate about technology and building innovative solutions",
+    "location": "Barcelona, Spain",
+    "viewProjects": "View My Projects",
+    "viewResume": "View Resume",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a Computer Science student at Universitat Pompeu Fabra with a strong passion for programming and problem-solving. I enjoy tackling both academic and personal projects, learning new technologies, and improving my skills to create practical and innovative solutions.",
+    "education": "Education",
+    "degree": "Bachelor in Computer Science",
+    "university": "Universitat Pompeu Fabra, Barcelona",
+    "graduation": "Expected Graduation: Jun 2027",
+    "current": "Current"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "mainTech": "Main Technologies",
+    "additionalTech": "Additional Technologies"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "description": "Some of my academic and personal projects showcasing my programming skills and passion. Click to view on GitHub.",
+    "passSide": {
+      "title": "Pass Side",
+      "description": "Personal project made from scratch, implementing logics and algorithms to create an original board game that combines strategy and fun.",
+      "tags": ["JavaScript", "Webside", "Game Development"]
+    },
+    "examGrader": {
+      "title": "Exam Grader", 
+      "description": "Developed an automated tool in C for grading multiple-choice exams from scanned images as a side project.",
+      "tags": ["C", "Algorithms", "Efficiency"]
+    },
+    "planB": {
+      "title": "PlanB",
+      "description": "Original idea carried out as a team project within university coursework, developed as a web-based application.",
+      "tags": ["React", "Node", "Teamwork"]
+    },
+    "vladijoc": {
+      "title": "Vladijoc",
+      "description": "Collaborative university project built from scratch, focused on implementing data structures and algorithms.",
+      "tags": ["C", "JSON", "Data Structures"]
+    }
+  },
+  "contact": {
+    "title": "Let's connect!",
+    "description": "Feel free to get in touch to connect, collaborate, or explore new projects.",
+    "email": "Contact Me via Email",
+    "linkedin": "View LinkedIn Profile", 
+    "github": "View GitHub Profile"
+  }
+}
