@@ -70,7 +70,7 @@ export default function HomePage() {
               Passionate about technology and building innovative solutions
             </p>
             <p className="text-sm md:text-base text-blue-400 mb-8 flex items-center justify-center gap-2">
-              <img src="/portfolio/icons/Location.png" alt="Location" className="w-4 h-4" />
+              <img src="https://arnau-sala.github.io/portfolio/icons/Location.png" alt="Location" className="w-4 h-4" />
               Barcelona, Spain
             </p>
             
