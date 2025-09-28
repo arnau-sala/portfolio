@@ -315,39 +315,39 @@ body {
 }
 
 .skills-additional-section {
-  animation: slideInFromRight 1s ease-out 6.5s both;
+  animation: slideInFromRight 1s ease-out 6.2s both;
 }
 
 .skills-main-title {
-  animation: slideInFromLeft 0.8s ease-out 6.7s both;
+  animation: slideInFromLeft 0.8s ease-out 6.3s both;
 }
 
 .skills-additional-title {
-  animation: slideInFromRight 0.8s ease-out 7.2s both;
+  animation: slideInFromRight 0.8s ease-out 6.4s both;
 }
 
 /* Individual skill items with staggered animation */
-.skill-main-0 { animation: slideInFromLeft 0.6s ease-out 7s both; }
-.skill-main-1 { animation: slideInFromLeft 0.6s ease-out 7.2s both; }
-.skill-main-2 { animation: slideInFromLeft 0.6s ease-out 7.4s both; }
-.skill-main-3 { animation: slideInFromLeft 0.6s ease-out 7.6s both; }
+.skill-main-0 { animation: slideInFromLeft 0.6s ease-out 6.5s both; }
+.skill-main-1 { animation: slideInFromLeft 0.6s ease-out 6.6s both; }
+.skill-main-2 { animation: slideInFromLeft 0.6s ease-out 6.7s both; }
+.skill-main-3 { animation: slideInFromLeft 0.6s ease-out 6.8s both; }
 
-.skill-additional-0 { animation: slideInFromRight 0.6s ease-out 7.5s both; }
-.skill-additional-1 { animation: slideInFromRight 0.6s ease-out 7.7s both; }
-.skill-additional-2 { animation: slideInFromRight 0.6s ease-out 7.9s both; }
-.skill-additional-3 { animation: slideInFromRight 0.6s ease-out 8.1s both; }
-.skill-additional-4 { animation: slideInFromRight 0.6s ease-out 8.3s both; }
-.skill-additional-5 { animation: slideInFromRight 0.6s ease-out 8.5s both; }
+.skill-additional-0 { animation: slideInFromRight 0.6s ease-out 6.7s both; }
+.skill-additional-1 { animation: slideInFromRight 0.6s ease-out 6.8s both; }
+.skill-additional-2 { animation: slideInFromRight 0.6s ease-out 6.9s both; }
+.skill-additional-3 { animation: slideInFromRight 0.6s ease-out 7.0s both; }
+.skill-additional-4 { animation: slideInFromRight 0.6s ease-out 7.1s both; }
+.skill-additional-5 { animation: slideInFromRight 0.6s ease-out 7.2s both; }
 
 /* Progress bar animations */
 .skill-progress-main {
   width: 0;
-  animation: progressBarMain 1.5s ease-out 7.5s both;
+  animation: progressBarMain 1.5s ease-out 6.8s both;
 }
 
 .skill-progress-additional {
   width: 0;
-  animation: progressBarAdditional 1.5s ease-out 8s both;
+  animation: progressBarAdditional 1.5s ease-out 7.0s both;
 }
 
 @keyframes progressBarMain {
@@ -364,28 +364,28 @@ body {
 
 /* Projects Section Animations */
 .projects-title {
-  animation: slideInFromBottom 1s ease-out 8s both;
+  animation: slideInFromBottom 1s ease-out 7.5s both;
 }
 
 .projects-description {
-  animation: fadeIn 1s ease-out 8.5s both;
+  animation: fadeIn 1s ease-out 7.8s both;
 }
 
 /* Individual project cards with scaling and rotation effects */
 .project-0 {
-  animation: projectSlideIn 0.8s ease-out 9s both;
+  animation: projectSlideIn 0.8s ease-out 8.2s both;
 }
 
 .project-1 {
-  animation: projectSlideIn 0.8s ease-out 9.3s both;
+  animation: projectSlideIn 0.8s ease-out 8.4s both;
 }
 
 .project-2 {
-  animation: projectSlideIn 0.8s ease-out 9.6s both;
+  animation: projectSlideIn 0.8s ease-out 8.6s both;
 }
 
 .project-3 {
-  animation: projectSlideIn 0.8s ease-out 9.9s both;
+  animation: projectSlideIn 0.8s ease-out 8.8s both;
 }
 
 /* Project card entrance animation */
