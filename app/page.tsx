@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import LanguageSelector from '../src/components/LanguageSelector';
 import { useLanguage } from '../src/contexts/LanguageContext';
+import { getAssetPath } from '../src/utils/paths';
 
 export default function HomePage() {
   const { t, isLoading } = useLanguage();
@@ -104,7 +105,7 @@ export default function HomePage() {
               {t('hero.description')}
             </p>
             <p className="hero-location text-sm md:text-base text-blue-400 mb-8 flex items-center justify-center gap-2">
-              <img src="https://arnau-sala.github.io/portfolio/icons/Location.png" alt="Location" className="w-4 h-4 location-pin" />
+              <img src={getAssetPath('/icons/Location.png')} alt="Location" className="w-4 h-4 location-pin" />
               <span className="location-text">{t('hero.location')}</span>
             </p>
             
@@ -147,7 +148,7 @@ export default function HomePage() {
                   <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full p-1">
                     <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
                       <img 
-                        src="/portfolio/icons/draw.jpg" 
+                        src={getAssetPath('/icons/draw.jpg')} 
                         alt="Arnau Sala Araujo" 
                         className="w-72 h-72 object-contain rounded-full"
                       />
@@ -200,16 +201,16 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="skills-main-section space-y-8">
                 <h3 className="skills-main-title text-2xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
-                  <img src="/portfolio/icons/main.png" alt="Target" className="w-8 h-8" />
+                  <img src={getAssetPath('/icons/main.png')} alt="Target" className="w-8 h-8" />
                   {t('skills.mainTech')}
                 </h3>
                 
                 <div className="space-y-6">
                   {[
-                    { name: 'Java', level: 85, icon: '/portfolio/icons/java.png' },
-                    { name: 'Python', level: 90, icon: '/portfolio/icons/python.png' },
-                    { name: 'C++', level: 85, icon: '/portfolio/icons/c++.png' },
-                    { name: 'C', level: 95, icon: '/portfolio/icons/c.png' }
+                    { name: 'Java', level: 85, icon: getAssetPath('/icons/java.png') },
+                    { name: 'Python', level: 90, icon: getAssetPath('/icons/python.png') },
+                    { name: 'C++', level: 85, icon: getAssetPath('/icons/c++.png') },
+                    { name: 'C', level: 95, icon: getAssetPath('/icons/c.png') }
                   ].map((skill, index) => (
                     <div key={skill.name} className={`skill-item skill-main-${index}`}>
                       <div className="flex items-center justify-between mb-2">
@@ -232,18 +233,18 @@ export default function HomePage() {
               
               <div className="skills-additional-section space-y-8">
                 <h3 className="skills-additional-title text-2xl font-semibold text-purple-400 mb-6 flex items-center gap-2">
-                  <img src="/portfolio/icons/secondary.png" alt="Additional Tech" className="w-8 h-8" />
+                  <img src={getAssetPath('/icons/secondary.png')} alt="Additional Tech" className="w-8 h-8" />
                   {t('skills.additionalTech')}
                 </h3>
                 
                 <div className="space-y-6">
                   {[
-                    { name: 'JavaScript', level: 70, icon: '/portfolio/icons/JavaScript.png' },
-                    { name: 'SQL', level: 75, icon: '/portfolio/icons/SQL.png' },
-                    { name: 'HTML', level: 70, icon: '/portfolio/icons/html.png' },
-                    { name: 'CSS', level: 70, icon: '/portfolio/icons/css.png' },
-                    { name: 'CUDA', level: 75, icon: '/portfolio/icons/nvidia.png' },
-                    { name: 'MATLAB', level: 65, icon: '/portfolio/icons/matlab.png' }
+                    { name: 'JavaScript', level: 70, icon: getAssetPath('/icons/JavaScript.png') },
+                    { name: 'SQL', level: 75, icon: getAssetPath('/icons/SQL.png') },
+                    { name: 'HTML', level: 70, icon: getAssetPath('/icons/html.png') },
+                    { name: 'CSS', level: 70, icon: getAssetPath('/icons/css.png') },
+                    { name: 'CUDA', level: 75, icon: getAssetPath('/icons/nvidia.png') },
+                    { name: 'MATLAB', level: 65, icon: getAssetPath('/icons/matlab.png') }
                   ].map((skill, index) => (
                     <div key={skill.name} className={`skill-item skill-additional-${index}`}>
                       <div className="flex items-center justify-between mb-2">
@@ -286,28 +287,28 @@ export default function HomePage() {
                   description: t('projects.passSide.description'),
                   tech: t('projects.passSide.tags'),
                   github: 'https://github.com/arnau-sala/pass-side.git',
-                  icon: '/portfolio/icons/chess.png'
+                  icon: getAssetPath('/icons/chess.png')
                 },
                 {
                   title: t('projects.examGrader.title'),
                   description: t('projects.examGrader.description'),
                   tech: t('projects.examGrader.tags'),
                   github: 'https://github.com/arnau-sala/exam-grader.git',
-                  icon: '/portfolio/icons/exam.png'
+                  icon: getAssetPath('/icons/exam.png')
                 },
                 {
                   title: t('projects.planB.title'),
                   description: t('projects.planB.description'),
                   tech: t('projects.planB.tags'),
                   github: 'https://github.com/arnau-sala/planB.git',
-                  icon: '/portfolio/icons/group.png'
+                  icon: getAssetPath('/icons/group.png')
                 },
                 {
                   title: t('projects.vladijoc.title'),
                   description: t('projects.vladijoc.description'),
                   tech: t('projects.vladijoc.tags'),
                   github: 'https://github.com/ToniOrtizGil/EDA-II.git',
-                  icon: '/portfolio/icons/dices.png'
+                  icon: getAssetPath('/icons/dices.png')
                 }
               ].map((project, index) => (
                 <a
@@ -355,7 +356,7 @@ export default function HomePage() {
               >
                 <div className="contact-icon w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img 
-                    src="/portfolio/icons/email.png" 
+                    src={getAssetPath('/icons/email.png')} 
                     alt="Email"
                     className="w-16 h-16 object-contain"
                   />
@@ -373,7 +374,7 @@ export default function HomePage() {
               >
                 <div className="contact-icon w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img 
-                    src="/portfolio/icons/linkedin.png" 
+                    src={getAssetPath('/icons/linkedin.png')} 
                     alt="LinkedIn"
                     className="w-16 h-16 object-contain"
                   />

@@ -56,27 +56,29 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const initTranslations = async () => {
       setIsLoading(true);
 
-      // Load initial language
+      // Always start with English as default
       let initialLang: Language = 'en';
+      
+      // Load English translations first to ensure we have fallback content
+      const englishTranslation = await loadTranslation('en');
+      setAllTranslations({ 'en': englishTranslation } as Record<Language, Translations>);
+      setCurrentLanguage('en');
+
+      // Then check for stored language preference
       try {
         const stored = localStorage.getItem(STORAGE_KEY) as Language;
-        if (stored && ['en', 'es', 'ca'].includes(stored)) {
+        if (stored && ['es', 'ca'].includes(stored)) {
+          // Only change from English if user previously selected a different language
           initialLang = stored;
-          console.log('🌐 Using stored language:', stored);
-        } else {
-          const browserLang = navigator.language.split('-')[0] as Language;
-          initialLang = ['en', 'es', 'ca'].includes(browserLang) ? browserLang : 'en';
-          console.log('🌐 Using detected language:', initialLang);
+          console.log('🌐 Loading stored language:', stored);
+          const storedTranslation = await loadTranslation(initialLang);
+          setAllTranslations(prev => ({ ...prev, [initialLang]: storedTranslation }));
+          setCurrentLanguage(initialLang);
         }
       } catch (error) {
         console.log('🌐 Using default language: en');
       }
 
-      // Load translation for initial language
-      const initialTranslation = await loadTranslation(initialLang);
-      
-      setCurrentLanguage(initialLang);
-      setAllTranslations({ [initialLang]: initialTranslation } as Record<Language, Translations>);
       setIsLoading(false);
     };
 
@@ -110,7 +112,20 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const translations = allTranslations[currentLanguage];
     
     if (!translations) {
-      console.warn(`⚠️ No translations for language: ${currentLanguage}`);
+      // Fallback to English if current language translations aren't loaded
+      const englishTranslations = allTranslations['en'];
+      if (englishTranslations) {
+        console.warn(`⚠️ No translations for language: ${currentLanguage}, falling back to English`);
+        const keys = key.split('.');
+        let value = englishTranslations;
+        
+        for (const k of keys) {
+          value = value?.[k];
+          if (value === undefined) break;
+        }
+        
+        if (value !== undefined) return value;
+      }
       return key;
     }
 
@@ -120,6 +135,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     for (const k of keys) {
       value = value?.[k];
       if (value === undefined) {
+        // Try fallback to English
+        const englishTranslations = allTranslations['en'];
+        if (englishTranslations && currentLanguage !== 'en') {
+          let englishValue = englishTranslations;
+          for (const fallbackKey of keys) {
+            englishValue = englishValue?.[fallbackKey];
+            if (englishValue === undefined) break;
+          }
+          if (englishValue !== undefined) {
+            console.warn(`⚠️ Translation missing for key: ${key} in ${currentLanguage}, using English fallback`);
+            return englishValue;
+          }
+        }
         console.warn(`⚠️ Translation missing for key: ${key} in ${currentLanguage}`);
         return key;
       }
