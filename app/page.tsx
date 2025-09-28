@@ -70,7 +70,7 @@ export default function HomePage() {
               Passionate about technology and building innovative solutions
             </p>
             <p className="text-sm md:text-base text-blue-400 mb-8 flex items-center justify-center gap-2">
-              <img src="/icons/Location.png" alt="Location" className="w-4 h-4" />
+              <img src="/portfolio/icons/Location.png" alt="Location" className="w-4 h-4" />
               Barcelona, Spain
             </p>
             
@@ -82,7 +82,7 @@ export default function HomePage() {
                 View My Projects
               </a>
               <a
-                href="/cv/Arnau_Sala_CV.pdf"
+                href="/portfolio/cv/Arnau_Sala_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
@@ -116,7 +116,7 @@ export default function HomePage() {
                   <div className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full p-1">
                     <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
                       <img 
-                        src="/icons/draw.jpg" 
+                        src="/portfolio/icons/draw.jpg" 
                         alt="Arnau Sala Araujo" 
                         className="w-72 h-72 object-contain rounded-full"
                       />
@@ -169,16 +169,16 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <h3 className="text-2xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
-                  <img src="/icons/main.png" alt="Target" className="w-8 h-8" />
+                  <img src="/portfolio/icons/main.png" alt="Target" className="w-8 h-8" />
                   Main Technologies
                 </h3>
                 
                 <div className="space-y-6">
                   {[
-                    { name: 'Java', level: 85, icon: '/icons/java.png' },
-                    { name: 'Python', level: 90, icon: '/icons/python.png' },
-                    { name: 'C++', level: 85, icon: '/icons/c++.png' },
-                    { name: 'C', level: 95, icon: '/icons/c.png' }
+                    { name: 'Java', level: 85, icon: '/portfolio/icons/java.png' },
+                    { name: 'Python', level: 90, icon: '/portfolio/icons/python.png' },
+                    { name: 'C++', level: 85, icon: '/portfolio/icons/c++.png' },
+                    { name: 'C', level: 95, icon: '/portfolio/icons/c.png' }
                   ].map(skill => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-2">
@@ -201,18 +201,18 @@ export default function HomePage() {
               
               <div className="space-y-8">
                 <h3 className="text-2xl font-semibold text-purple-400 mb-6 flex items-center gap-2">
-                  <img src="/icons/secondary.png" alt="Additional Tech" className="w-8 h-8" />
+                  <img src="/portfolio/icons/secondary.png" alt="Additional Tech" className="w-8 h-8" />
                   Additional Technologies
                 </h3>
                 
                 <div className="space-y-6">
                   {[
-                    { name: 'JavaScript', level: 70, icon: '/icons/JavaScript.png' },
-                    { name: 'SQL', level: 75, icon: '/icons/SQL.png' },
-                    { name: 'HTML', level: 70, icon: '/icons/html.png' },
-                    { name: 'CSS', level: 70, icon: '/icons/css.png' },
-                    { name: 'CUDA', level: 75, icon: '/icons/nvidia.png' },
-                    { name: 'MATLAB', level: 65, icon: '/icons/matlab.png' }
+                    { name: 'JavaScript', level: 70, icon: '/portfolio/icons/JavaScript.png' },
+                    { name: 'SQL', level: 75, icon: '/portfolio/icons/SQL.png' },
+                    { name: 'HTML', level: 70, icon: '/portfolio/icons/html.png' },
+                    { name: 'CSS', level: 70, icon: '/portfolio/icons/css.png' },
+                    { name: 'CUDA', level: 75, icon: '/portfolio/icons/nvidia.png' },
+                    { name: 'MATLAB', level: 65, icon: '/portfolio/icons/matlab.png' }
                   ].map(skill => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-2">
@@ -255,28 +255,28 @@ export default function HomePage() {
                   description: 'Personal project made from scratch, implementing logics and algorithms to create an original board game that combines strategy and fun.',
                   tech: ['JavaScript', 'Webside', 'Game Development'],
                   github: 'https://github.com/arnau-sala/pass-side.git',
-                  icon: '/icons/chess.png'
+                  icon: '/portfolio/icons/chess.png'
                 },
                 {
                   title: 'Exam Grader',
                   description: 'Developed an automated tool in C for grading multiple-choice exams from scanned images as a side project.',
                   tech: ['C', 'Algorithms', 'Efficiency'],
                   github: 'https://github.com/arnau-sala/exam-grader.git',
-                  icon: '/icons/exam.png'
+                  icon: '/portfolio/icons/exam.png'
                 },
                 {
                   title: 'PlanB',
                   description: 'Original idea carried out as a team project within university coursework, developed as a web-based application.',
                   tech: ['React', 'Node', 'Teamwork'],
                   github: 'https://github.com/arnau-sala/planB.git',
-                  icon: '/icons/group.png'
+                  icon: '/portfolio/icons/group.png'
                 },
                 {
                   title: 'Vladijoc',
                   description: 'Collaborative university project built from scratch, focused on implementing data structures and algorithms.',
                   tech: ['C', 'JSON', 'Data Structures'],
                   github: 'https://github.com/ToniOrtizGil/EDA-II.git',
-                  icon: '/icons/dices.png'
+                  icon: '/portfolio/icons/dices.png'
                 }
               ].map(project => (
                 <a
@@ -324,7 +324,7 @@ export default function HomePage() {
               >
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img 
-                    src="/icons/email.png" 
+                    src="/portfolio/icons/email.png" 
                     alt="Email"
                     className="w-16 h-16 object-contain"
                   />
@@ -342,7 +342,7 @@ export default function HomePage() {
               >
                 <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <img 
-                    src="/icons/linkedin.png" 
+                    src="/portfolio/icons/linkedin.png" 
                     alt="LinkedIn"
                     className="w-16 h-16 object-contain"
                   />
