@@ -33,7 +33,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // Load translations for a specific language
   const loadTranslation = async (lang: Language): Promise<Translations> => {
     try {
-      const response = await fetch(`/messages/${lang}.json`);
+      const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+      const response = await fetch(`${basePath}/messages/${lang}.json`);
       if (response.ok) {
         const data = await response.json();
         console.log(`✅ Loaded ${lang} translations`);
