@@ -240,7 +240,7 @@ export default function HomePage() {
                 <div className="space-y-6">
                   {[
                     { name: 'JavaScript', level: 70, icon: getAssetPath('/icons/JavaScript.png') },
-                    { name: 'SQL', level: 75, icon: getAssetPath('/icons/SQL.png') },
+                    { name: 'SQL', level: 75, icon: getAssetPath('/icons/sql-icon.png') },
                     { name: 'HTML', level: 70, icon: getAssetPath('/icons/html.png') },
                     { name: 'CSS', level: 70, icon: getAssetPath('/icons/css.png') },
                     { name: 'CUDA', level: 75, icon: getAssetPath('/icons/nvidia.png') },
