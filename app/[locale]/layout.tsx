@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   description: "Computer Science Student | Java, Python, C, C++ Developer | Barcelona, Spain",
 };
 
+// Generate static params for all supported locales
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'es' },
+    { locale: 'ca' }
+  ];
+}
+
 export default function LocaleLayout({
   children,
 }: {
