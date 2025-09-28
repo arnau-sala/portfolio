@@ -85,12 +85,9 @@ export default function HomePage() {
                 href="/portfolio/cv/Arnau_Sala_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                View CV
+                Resume
               </a>
               <a
                 href="mailto:arnausalaaraujo@gmail.com"
