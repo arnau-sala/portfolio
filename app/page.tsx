@@ -87,7 +87,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105"
               >
-                Resume
+                View Resume
               </a>
               <a
                 href="mailto:arnausalaaraujo@gmail.com"
