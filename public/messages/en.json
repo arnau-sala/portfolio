@@ -47,9 +47,9 @@
       "tags": ["React", "Node", "Teamwork"]
     },
     "vladijoc": {
-      "title": "Vladijoc",
-      "description": "Collaborative university project built from scratch, focused on implementing data structures and algorithms.",
-      "tags": ["C", "JSON", "Data Structures"]
+      "title": "Study Spark (Hackathon Prototype)",
+      "description": "Built at Glovo's AI Summit Hackathon: summarizes notes, creates quizzes, and generates explainer videos with AI.",
+      "tags": ["Hackathon", "Prototype", "AI"]
     }
   },
   "contact": {

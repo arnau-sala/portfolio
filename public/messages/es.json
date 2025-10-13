@@ -47,9 +47,9 @@
       "tags": ["React", "Node", "Trabajo en Equipo"]
     },
     "vladijoc": {
-      "title": "Vladijoc",
-      "description": "Proyecto universitario colaborativo construido desde cero, enfocado en implementar estructuras de datos y algoritmos.",
-      "tags": ["C", "JSON", "Estructuras de Datos"]
+      "title": "Study Spark (Prototipo de Hackathon)",
+      "description": "Creado en el Hackathon AI Summit de Glovo: resume apuntes, crea cuestionarios y genera videos explicativos con IA.",
+      "tags": ["Hackathon", "Prototipo", "IA"]
     }
   },
   "contact": {

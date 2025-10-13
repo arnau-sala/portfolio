@@ -465,12 +465,12 @@ export default function HomePage() {
                   title: t('projects.vladijoc.title'),
                   description: t('projects.vladijoc.description'),
                   tech: t('projects.vladijoc.tags'),
-                  github: 'https://github.com/ToniOrtizGil/EDA-II.git',
-                  icon: getAssetPath('/icons/dices.png')
+                  github: 'https://github.com/arnau-sala/study-spark.git',
+                  icon: getAssetPath('/icons/studyspark.png')
                 }
               ].map((project, index) => (
                 <a
-                  key={project.title}
+                  key={index}
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
