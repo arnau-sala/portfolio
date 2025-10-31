@@ -445,7 +445,7 @@ export default function HomePage() {
                   description: t('projects.passSide.description'),
                   tech: t('projects.passSide.tags'),
                   github: 'https://github.com/arnau-sala/pass-side.git',
-                  icon: getAssetPath('/icons/chess.png')
+                  icon: getAssetPath('/icons/pass-side.png')
                 },
                 {
                   title: t('projects.examGrader.title'),
@@ -469,12 +469,13 @@ export default function HomePage() {
                   icon: getAssetPath('/icons/studyspark.png')
                 }
               ].map((project, index) => (
-                <a
+                <div
                   key={index}
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`project-card project-${index} block bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer`}
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(project.github, '_blank', 'noopener,noreferrer'); } }}
+                  className={`project-card project-${index} block bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer relative`}
                 >
                   <div className="project-icon w-16 h-16 mb-4 flex items-center justify-center">
                     <img src={project.icon} alt={project.title} className="w-12 h-12" />
@@ -482,14 +483,27 @@ export default function HomePage() {
                   <h3 className="project-title text-xl font-bold text-white mb-3">{project.title}</h3>
                   <p className="project-description text-gray-300 mb-4 leading-relaxed">{project.description}</p>
                   
-                  <div className="project-tags flex flex-wrap gap-2">
+                  <div className="project-tags flex flex-wrap gap-2 pr-24">
                     {Array.isArray(project.tech) ? project.tech.map((tech: string) => (
                       <span key={tech} className="px-3 py-1 bg-gray-700 text-blue-400 rounded-full text-sm font-medium">
                         {tech}
                       </span>
                     )) : null}
                   </div>
-                </a>
+
+                  {index === 0 && (
+                    <a
+                      href="https://arnau-sala.github.io/pass-side/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-6 right-6 px-3 py-1 rounded-full text-sm font-medium bg-blue-600 text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400/60 focus:ring-offset-0 border border-blue-400/50"
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={(e) => e.stopPropagation()}
+                    >
+                      {currentLanguage === 'es' ? 'Iniciar' : currentLanguage === 'ca' ? 'Inicia' : 'Launch'}
+                    </a>
+                  )}
+                </div>
               ))}
             </div>
           </div>
