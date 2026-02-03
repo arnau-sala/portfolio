@@ -36,15 +36,15 @@
       "description": "Projecte personal fet des de zero, implementant lògiques i algoritmes per crear un joc de taula original que combina estratègia i diversió.",
       "tags": ["JavaScript", "Pàgina Web", "Desenvolupament de Jocs"]
     },
+    "movieMatch": {
+      "title": "MovieMatch",
+      "description": "Aplicació web desenvolupada amb Streamlit per descobrir pel·lícules utilitzant l'API de TMDB, amb cerca, filtrat i recomanacions personalitzades.",
+      "tags": ["Python", "Streamlit", "Integració API"]
+    },
     "examGrader": {
       "title": "Exam Grader", 
       "description": "Vaig desenvolupar una eina automatitzada en C per qualificar exàmens d'opció múltiple des d'imatges escanejades com a projecte personal.",
       "tags": ["C", "Algoritmes", "Eficiència"]
-    },
-    "planB": {
-      "title": "PlanB",
-      "description": "Idea original duta a terme com a projecte en equip com a projecte universitari, desenvolupada com a aplicació web.",
-      "tags": ["React", "Node", "Treball en Equip"]
     },
     "vladijoc": {
       "title": "Study Spark (Prototip de Hackathon)",

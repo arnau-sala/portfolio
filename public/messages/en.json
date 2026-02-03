@@ -36,15 +36,15 @@
       "description": "Personal project made from scratch, implementing logics and algorithms to create an original board game that combines strategy and fun.",
       "tags": ["JavaScript", "Webside", "Game Development"]
     },
+    "movieMatch": {
+      "title": "MovieMatch",
+      "description": "Web application built with Streamlit for discovering movies using the TMDB API, featuring search, filtering, and personalized recommendations.",
+      "tags": ["Python", "Streamlit", "API Integration"]
+    },
     "examGrader": {
       "title": "Exam Grader", 
       "description": "Developed an automated tool in C for grading multiple-choice exams from scanned images as a side project.",
       "tags": ["C", "Algorithms", "Efficiency"]
-    },
-    "planB": {
-      "title": "PlanB",
-      "description": "Original idea carried out as a team project within university coursework, developed as a web-based application.",
-      "tags": ["React", "Node", "Teamwork"]
     },
     "vladijoc": {
       "title": "Study Spark (Hackathon Prototype)",

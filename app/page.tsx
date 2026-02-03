@@ -367,6 +367,7 @@ export default function HomePage() {
                   {[
                     { name: 'Java', level: 85, icon: getAssetPath('/icons/java.png') },
                     { name: 'Python', level: 90, icon: getAssetPath('/icons/python.png') },
+                    { name: 'SQL', level: 85, icon: getAssetPath('/icons/sql.png') },
                     { name: 'C++', level: 85, icon: getAssetPath('/icons/c++.png') },
                     { name: 'C', level: 95, icon: getAssetPath('/icons/c.png') }
                   ].map((skill, index) => (
@@ -398,7 +399,6 @@ export default function HomePage() {
                 <div className="space-y-6">
                   {[
                     { name: 'JavaScript', level: 70, icon: getAssetPath('/icons/JavaScript.png') },
-                    { name: 'SQL', level: 75, icon: getAssetPath('/icons/sql.png') },
                     { name: 'HTML', level: 70, icon: getAssetPath('/icons/html.png') },
                     { name: 'CSS', level: 70, icon: getAssetPath('/icons/css.png') },
                     { name: 'CUDA', level: 75, icon: getAssetPath('/icons/nvidia.png') },
@@ -445,7 +445,16 @@ export default function HomePage() {
                   description: t('projects.passSide.description'),
                   tech: t('projects.passSide.tags'),
                   github: 'https://github.com/arnau-sala/pass-side.git',
-                  icon: getAssetPath('/icons/pass-side.png')
+                  icon: getAssetPath('/icons/pass-side.png'),
+                  launchUrl: 'https://arnau-sala.github.io/pass-side/'
+                },
+                {
+                  title: t('projects.movieMatch.title'),
+                  description: t('projects.movieMatch.description'),
+                  tech: t('projects.movieMatch.tags'),
+                  github: 'https://github.com/arnau-sala/MovieMatch.git',
+                  icon: getAssetPath('/icons/moviematch.png'),
+                  launchUrl: 'https://movie-matchr.streamlit.app/'
                 },
                 {
                   title: t('projects.examGrader.title'),
@@ -453,13 +462,6 @@ export default function HomePage() {
                   tech: t('projects.examGrader.tags'),
                   github: 'https://github.com/arnau-sala/exam-grader.git',
                   icon: getAssetPath('/icons/exam.png')
-                },
-                {
-                  title: t('projects.planB.title'),
-                  description: t('projects.planB.description'),
-                  tech: t('projects.planB.tags'),
-                  github: 'https://github.com/arnau-sala/planB.git',
-                  icon: getAssetPath('/icons/group.png')
                 },
                 {
                   title: t('projects.vladijoc.title'),
@@ -491,9 +493,9 @@ export default function HomePage() {
                     )) : null}
                   </div>
 
-                  {index === 0 && (
+                  {(index === 0 || index === 1) && project.launchUrl && (
                     <a
-                      href="https://arnau-sala.github.io/pass-side/"
+                      href={project.launchUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="absolute bottom-6 right-6 px-3 py-1 rounded-full text-sm font-medium bg-blue-600 text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400/60 focus:ring-offset-0 border border-blue-400/50"
