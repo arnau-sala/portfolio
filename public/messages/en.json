@@ -16,10 +16,13 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a Computer Science student at Universitat Pompeu Fabra with a strong passion for programming and problem-solving. I enjoy tackling both academic and personal projects, learning new technologies, and improving my skills to create practical and innovative solutions.",
+    "description": "I'm a Computer Science student at Pompeu Fabra University with a strong passion for programming and problem-solving. I enjoy tackling both academic and personal projects, learning new technologies, and improving my skills to create practical and innovative solutions.",
     "education": "Education",
     "degree": "Bachelor in Computer Science",
-    "university": "Universitat Pompeu Fabra, Barcelona",
+    "university": "Pompeu Fabra University, Barcelona",
+    "exchange": "Exchange Program",
+    "exchangeUniversity": "Bentley University, Boston, United States",
+    "exchangePeriod": "Aug - Dec 2026",
     "graduation": "Expected Graduation: Jun 2027",
     "current": "Current"
   },

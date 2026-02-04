@@ -325,11 +325,6 @@ export default function HomePage() {
               {/* Education Card */}
               <div className="about-education-card flex justify-center w-full">
                 <div className="bg-gray-700/50 p-6 rounded-lg border border-gray-600 hover:border-blue-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/10 relative group">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-blue-400 mb-2">{t('about.education')}</h3>
-                    <div className="w-24 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500"></div>
-                  </div>
-                  
                   <div className="space-y-3">
                     <div className="flex items-baseline justify-between gap-3">
                       <h4 className="font-semibold text-white">{t('about.degree')}</h4>
@@ -338,6 +333,13 @@ export default function HomePage() {
                       </span>
                     </div>
                     <p className="text-gray-300">{t('about.university')}</p>
+                    <div className="text-sm text-gray-300 space-y-1">
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-medium text-gray-300">{t('about.exchange')}</span>
+                        <span className="text-xs text-gray-400">{t('about.exchangePeriod')}</span>
+                      </div>
+                      <p className="text-gray-300">{t('about.exchangeUniversity')}</p>
+                    </div>
                     <div className="flex items-center gap-2 text-sm text-blue-400">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                       <span>{t('about.graduation')}</span>

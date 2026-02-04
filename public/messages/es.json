@@ -16,10 +16,13 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Soy estudiante de Ingeniería Informática en la Universitat Pompeu Fabra de Barcelona. Tengo una gran pasión por la programación y la resolución de problemas. Disfruto enfrentándome tanto a proyectos académicos como personales, aprendiendo nuevas tecnologías y mejorando mis habilidades para crear soluciones prácticas e innovadoras.",
+    "description": "Soy estudiante de Ingeniería Informática en la Universidad Pompeu Fabra de Barcelona. Tengo una gran pasión por la programación y la resolución de problemas. Disfruto enfrentándome tanto a proyectos académicos como personales, aprendiendo nuevas tecnologías y mejorando mis habilidades para crear soluciones prácticas e innovadoras.",
     "education": "Educación",
     "degree": "Grado en Ingeniería Informática",
-    "university": "Universitat Pompeu Fabra, Barcelona",
+    "university": "Universidad Pompeu Fabra, Barcelona",
+    "exchange": "Programa de Intercambio",
+    "exchangeUniversity": "Universidad Bentley, Boston, Estados Unidos",
+    "exchangePeriod": "Ago - Dic 2026",
     "graduation": "Graduación esperada: Junio de 2027",
     "current": "Actual"
   },
