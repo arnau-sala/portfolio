@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with Next.js, featuring sophisticat
 
 - **Multilingual Support**: Available in English, Spanish, and Catalan
 - **Dynamic Resume System**: Automatic resume serving based on selected language
-- **Advanced Animations**: Sophisticated section-based entrance animations using Intersection Observer API 
+- **Advanced Animations**: Sophisticated section-based entrance animations using Intersection Observer API
 - **Responsive Design**: Optimized for all device sizes
 - **Modern Tech Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
 - **GitHub Pages Ready**: Configured for seamless deployment
