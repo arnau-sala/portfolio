@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
-/* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0a10;
+  --foreground: #eae8f0;
 }
 
 @theme inline {
@@ -15,13 +19,28 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Warm dark neutrals */
+  --color-warm-950: #0c0a10;
+  --color-warm-900: #13111a;
+  --color-warm-800: #1c1b26;
+  --color-warm-700: #282734;
+  --color-warm-600: #393842;
+  --color-warm-500: #585668;
+  --color-warm-400: #8886a0;
+  --color-warm-300: #aaa8bc;
+  --color-warm-200: #cdcbd8;
+  --color-warm-100: #eae8f0;
+  --color-warm-50: #f6f5fa;
+
+  /* Gold accent palette */
+  --color-gold-700: #5e4c1a;
+  --color-gold-600: #7a6428;
+  --color-gold-500: #a08534;
+  --color-gold-400: #c9a44e;
+  --color-gold-300: #d4b560;
+  --color-gold-200: #dfc778;
+  --color-gold-100: #ecd9a0;
 }
 
 body {
@@ -30,7 +49,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Custom Animation Classes */
+/* ───────────────────────────────
+   Scramble effect
+   ─────────────────────────────── */
+.scramble-dud {
+  color: #c9a44e;
+  opacity: 0.7;
+}
+
+/* ───────────────────────────────
+   Generic keyframes
+   ─────────────────────────────── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -51,7 +80,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Initial hidden states */
+/* Scroll-triggered initial hidden states */
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -76,7 +105,7 @@ body {
   transition: all 0.8s ease-out;
 }
 
-/* Visible states when in view */
+/* Visible states */
 .fade-in-scroll.animate {
   opacity: 1;
   transform: translateY(0);
@@ -113,8 +142,9 @@ body {
   animation: slideInUp 0.8s ease-out 0.6s both;
 }
 
-/* About Section Animations */
-/* Estado inicial - elementos ocultos fuera de posición */
+/* ───────────────────────────────
+   About Section Animations
+   ─────────────────────────────── */
 .about-title {
   opacity: 0 !important;
   transform: translateY(-30px) !important;
@@ -139,7 +169,6 @@ body {
   transition: all 0.8s ease-out !important;
 }
 
-/* Estados animados - cuando tienen clase .animate */
 .about-title.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -160,7 +189,9 @@ body {
   transform: translateX(0) !important;
 }
 
-/* Hero Section Entrance Animations */
+/* ───────────────────────────────
+   Hero Section Animations
+   ─────────────────────────────── */
 .hero-background {
   animation: backgroundFadeIn 1.5s ease-out both;
 }
@@ -169,7 +200,6 @@ body {
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-/* Efecto shine - gradiente con zona blanca extendida */
 .hero-name-shine {
   font-weight: 700;
   text-align: center;
@@ -188,20 +218,16 @@ body {
 }
 
 @keyframes shineCut {
-  0% {
-    background-position-x: -500%;
-  }
-  100% {
-    background-position-x: 130%;
-  }
+  0% { background-position-x: -500%; }
+  100% { background-position-x: 130%; }
 }
 
 .name-letter {
   display: inline-block;
-  opacity: 1; /* Temporalmente visible para debugging */
-  transform: translateY(0px); /* Sin desplazamiento inicial */
+  opacity: 1;
+  transform: translateY(0px);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  color: white; /* Asegurar que sea blanco */
+  color: white;
 }
 
 .name-letter.letter-appear {
@@ -233,7 +259,6 @@ body {
   animation: fadeInUp 0.8s ease-out 1.5s both;
 }
 
-/* Animaciones específicas para el pin y el texto de ubicación */
 .location-pin {
   animation: slideInFromTop 0.8s ease-out 1.5s both;
 }
@@ -246,100 +271,50 @@ body {
   animation: buttonsSlideScale 1s ease-out 1.8s both;
 }
 
-/* Hero Animation Keyframes */
 @keyframes backgroundFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes buttonsSlideScale {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateY(-5px) scale(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(30px) scale(0.9); }
+  50% { opacity: 0.7; transform: translateY(-5px) scale(1.05); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideInFromBottom {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animation keyframes */
 @keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInFromBottom {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Skills Section Animations */
-/* Estado inicial - elementos ocultos fuera de posición */
+/* ───────────────────────────────
+   Skills Section Animations
+   ─────────────────────────────── */
 .skills-title {
   opacity: 0 !important;
   transform: translateY(-30px) !important;
@@ -348,17 +323,16 @@ body {
 
 .skills-main-section {
   opacity: 0 !important;
-  transform: translateY(-50px) !important; /* Baja de arriba a abajo */
+  transform: translateY(-50px) !important;
   transition: all 0.8s ease-out !important;
 }
 
 .skills-additional-section {
   opacity: 0 !important;
-  transform: translateY(50px) !important; /* Sube de abajo a arriba */
+  transform: translateY(50px) !important;
   transition: all 0.8s ease-out !important;
 }
 
-/* Estados animados - cuando tienen clase .animate */
 .skills-title.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -375,51 +349,191 @@ body {
 }
 
 .skills-main-title, .skills-additional-title {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   transform: translateX(0);
   transition: all 0.6s ease-out;
 }
 
-/* Individual skill items */
+/* ── Skills Bento Grid ──────────────────────────────── */
+.skills-bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.45rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: clamp(2rem, 3vw, 3rem);
+}
+
+.bento-card {
+  container-type: size;
+  min-height: 4.2rem;
+}
+.bento-card > img {
+  width: clamp(18px, 76cqmin, 210px);
+  height: clamp(18px, 76cqmin, 210px);
+  object-fit: contain;
+  object-position: center;
+}
+.bento-card > span {
+  font-size: clamp(8px, 12cqmin, 24px);
+  margin-top: clamp(1px, 2.2cqmin, 9px);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.bento-size-5 > img { width: clamp(30px, 78cqmin, 228px); height: clamp(30px, 78cqmin, 228px); }
+.bento-size-4 > img { width: clamp(24px, 76cqmin, 190px); height: clamp(24px, 76cqmin, 190px); }
+.bento-size-3 > img { width: clamp(20px, 74cqmin, 152px); height: clamp(20px, 74cqmin, 152px); }
+.bento-size-2 > img { width: clamp(18px, 72cqmin, 124px); height: clamp(18px, 72cqmin, 124px); }
+.bento-size-1 > img { width: clamp(14px, 70cqmin, 92px); height: clamp(14px, 70cqmin, 92px); }
+
+.bento-size-5 > span { font-size: clamp(12px, 13cqmin, 28px); }
+.bento-size-4 > span { font-size: clamp(11px, 12cqmin, 24px); }
+.bento-size-3 > span { font-size: clamp(10px, 11cqmin, 20px); }
+.bento-size-2 > span { font-size: clamp(9px, 10cqmin, 16px); }
+.bento-size-1 > span { font-size: clamp(8px, 8.5cqmin, 12px); }
+
+.bento-hover-overlay {
+  display: none;
+  pointer-events: none;
+}
+
+.bento-hover-label {
+  color: #1f1a10;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  text-align: center;
+  padding: 0 0.35em;
+}
+
+/* Mobile-only editable matrix (10x6). Safe defaults to avoid overflow */
+@media (max-width: 767px) {
+  .bento-hover-overlay {
+    display: grid;
+    background: #e7dcc3;
+    opacity: 1;
+  }
+
+  .bento-size-5 .bento-hover-label { font-size: clamp(20px, 17cqmin, 52px); }
+  .bento-size-4 .bento-hover-label { font-size: clamp(18px, 15cqmin, 44px); }
+  .bento-size-3 .bento-hover-label { font-size: clamp(16px, 13.5cqmin, 36px); }
+  .bento-size-2 .bento-hover-label { font-size: clamp(14px, 12cqmin, 28px); }
+  .bento-size-1 .bento-hover-label { font-size: clamp(12px, 10.5cqmin, 22px); }
+
+  .skills-bento {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: clamp(1.85rem, 3.6vw, 2.35rem);
+    gap: 0.4rem;
+    grid-auto-flow: row dense;
+    grid-template-areas:
+      "re re cc gi gi dk"
+      "re re cc gi gi dk"
+      "re re cp cp py py"
+      "ht ht cp cp py py"
+      "ht ht ja ja py py"
+      "cs cs ja ja py py"
+      "cs cs ja ja py py"
+      "js js ja ja sq sq"
+      "js js ma cu sq sq"
+      "js js ma cu sq sq";
+  }
+
+  .skills-bento > .bento-card {
+    min-height: 0;
+    padding: 0.25rem;
+  }
+
+  .skills-bento > .bento-card > img {
+    width: clamp(16px, 64cqmin, 120px);
+    height: clamp(16px, 64cqmin, 120px);
+  }
+
+  .skills-bento > .bento-ht { grid-area: ht; }
+  .skills-bento > .bento-cs { grid-area: cs; }
+  .skills-bento > .bento-cp { grid-area: cp; }
+  .skills-bento > .bento-js { grid-area: js; }
+  .skills-bento > .bento-gi { grid-area: gi; }
+  .skills-bento > .bento-cu { grid-area: cu; }
+  .skills-bento > .bento-ja { grid-area: ja; }
+  .skills-bento > .bento-re { grid-area: re; }
+  .skills-bento > .bento-py { grid-area: py; }
+  .skills-bento > .bento-dk { grid-area: dk; }
+  .skills-bento > .bento-ma { grid-area: ma; }
+  .skills-bento > .bento-sq { grid-area: sq; }
+  .skills-bento > .bento-cc { grid-area: cc; }
+}
+
+@media (min-width: 768px) {
+  .bento-hover-overlay {
+    display: grid;
+    background: #e7dcc3;
+    opacity: 1;
+  }
+
+  .bento-size-5 .bento-hover-label { font-size: clamp(26px, 21cqmin, 68px); }
+  .bento-size-4 .bento-hover-label { font-size: clamp(24px, 19cqmin, 58px); }
+  .bento-size-3 .bento-hover-label { font-size: clamp(22px, 17cqmin, 48px); }
+  .bento-size-2 .bento-hover-label { font-size: clamp(20px, 15cqmin, 40px); }
+  .bento-size-1 .bento-hover-label { font-size: clamp(18px, 13cqmin, 32px); }
+
+  .skills-bento {
+    gap: 0.55rem;
+    /* Target ~2/3 height relative to block width */
+    grid-auto-rows: clamp(2rem, 1.95vw, 3.35rem);
+    /* 13x20 editing matrix (13 rows, 20 columns) */
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    grid-template-areas:
+      "ht ht ht ht ma ma cu cu cu sq sq sq sq sq py py py py py py"
+      "ht ht ht ht ma ma cu cu cu sq sq sq sq sq py py py py py py"
+      "ht ht ht ht js js js js js sq sq sq sq sq py py py py py py"
+      "ht ht ht ht js js js js js sq sq sq sq sq py py py py py py"
+      "cs cs cs cs js js js js js re re re re re py py py py py py"
+      "cs cs cs cs js js js js js re re re re re py py py py py py"
+      "cs cs cs cs ja ja ja ja ja re re re re re py py py py py py"
+      "cs cs cs cs ja ja ja ja ja re re re re re py py py py py py"
+      "cp cp cp cp ja ja ja ja ja re re re re re py py py py py py"
+      "cp cp cp cp ja ja ja ja ja re re re re re gi gi gi dk dk dk"
+      "cp cp cp cp ja ja ja ja ja cc cc cc cc cc gi gi gi dk dk dk"
+      "cp cp cp cp ja ja ja ja ja cc cc cc cc cc gi gi gi dk dk dk"
+      "cp cp cp cp ja ja ja ja ja cc cc cc cc cc gi gi gi dk dk dk"; 
+  } 
+  .skills-bento > .bento-ht { grid-area: ht; }
+  .skills-bento > .bento-cs { grid-area: cs; }
+  .skills-bento > .bento-cp { grid-area: cp; }
+  .skills-bento > .bento-js { grid-area: js; }
+  .skills-bento > .bento-gi { grid-area: gi; }
+  .skills-bento > .bento-cu { grid-area: cu; }
+  .skills-bento > .bento-ja { grid-area: ja; }
+  .skills-bento > .bento-re { grid-area: re; }
+  .skills-bento > .bento-py { grid-area: py; }
+  .skills-bento > .bento-dk { grid-area: dk; }
+  .skills-bento > .bento-ma { grid-area: ma; }
+  .skills-bento > .bento-sq { grid-area: sq; }
+  .skills-bento > .bento-cc { grid-area: cc; }
+}
+
 .skill-item {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   transform: translateX(0);
   transition: all 0.6s ease-out;
 }
 
-/* Progress bar animations */
 .skill-progress-main, .skill-progress-additional {
-  width: var(--progress); /* Full width by default */
+  width: var(--progress);
   transition: width 1.5s ease-out;
 }
 
 @keyframes progressBarMain {
-  to {
-    width: var(--progress);
-  }
+  to { width: var(--progress); }
 }
 
 @keyframes progressBarAdditional {
-  to {
-    width: var(--progress);
-  }
+  to { width: var(--progress); }
 }
 
-/* Contact Section Animations */
-.contact-title, .contact-description {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0);
-  transition: all 0.8s ease-out;
-}
-
-.contact-card {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0) scale(1);
-  transition: all 0.6s ease-out;
-}
-
-/* Projects Section Animations */
-/* Estado inicial - elementos ocultos con blur */
+/* ───────────────────────────────
+   Projects Section Animations
+   ─────────────────────────────── */
 .projects-title {
   opacity: 0 !important;
   transform: translateY(-30px) !important;
@@ -432,30 +546,27 @@ body {
   transition: all 0.8s ease-out !important;
 }
 
-/* Individual project cards with diagonal cascade animation */
 .project-card {
   opacity: 0 !important;
   transition: all 0.8s ease-out !important;
 }
 
-/* Diagonal positions for each project */
 .project-0 {
-  transform: translateX(-80px) translateY(-40px) !important; /* Superior izquierda */
+  transform: translateX(-80px) translateY(-40px) !important;
 }
 
 .project-1 {
-  transform: translateX(80px) translateY(-40px) !important; /* Superior derecha */
+  transform: translateX(80px) translateY(-40px) !important;
 }
 
 .project-2 {
-  transform: translateX(-80px) translateY(40px) !important; /* Inferior izquierda */
+  transform: translateX(-80px) translateY(40px) !important;
 }
 
 .project-3 {
-  transform: translateX(80px) translateY(40px) !important; /* Inferior derecha */
+  transform: translateX(80px) translateY(40px) !important;
 }
 
-/* Estados animados - cuando tienen clase .animate */
 .projects-title.animate {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -471,20 +582,14 @@ body {
   transform: translateX(0) translateY(0) !important;
 }
 
-/* Project card entrance animation */
 @keyframes projectSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px) rotateX(15deg);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0deg);
-  }
+  from { opacity: 0; transform: translateY(40px) rotateX(15deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0deg); }
 }
 
-/* Contact Section Animations */
-/* Estado inicial - elementos ocultos en sus posiciones de entrada */
+/* ───────────────────────────────
+   Contact Section Animations
+   ─────────────────────────────── */
 .contact-title {
   opacity: 0 !important;
   transform: translateY(-30px) scale(0.9) !important;
@@ -497,7 +602,6 @@ body {
   transition: all 1s ease-out !important;
 }
 
-/* Contact cards with directional initial positions */
 .contact-email {
   opacity: 0 !important;
   transform: translate(-40px, -40px) rotate(-10deg) scale(0.8) !important;
@@ -516,7 +620,6 @@ body {
   transition: all 0.8s ease-out !important;
 }
 
-/* Estados animados - cuando tienen clase .animate */
 .contact-title.animate {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
@@ -542,59 +645,64 @@ body {
   transform: translate(0, 0) rotate(0deg) scale(1) !important;
 }
 
-/* Contact entrance animations */
 @keyframes contactTitleEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(-30px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(-30px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes contactDescFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Directional slide-ins for contact cards */
 @keyframes slideInFromTopLeft {
-  from {
-    opacity: 0;
-    transform: translate(-40px, -40px) rotate(-10deg) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-}
-
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-50px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translate(-40px, -40px) rotate(-10deg) scale(0.8); }
+  to { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
 }
 
 @keyframes slideInFromTopRight {
-  from {
-    opacity: 0;
-    transform: translate(40px, -40px) rotate(10deg) scale(0.8);
+  from { opacity: 0; transform: translate(40px, -40px) rotate(10deg) scale(0.8); }
+  to { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+/* ───────────────────────────────
+   Mobile animation overrides
+   ─────────────────────────────── */
+@media (max-width: 767px) {
+  .project-0, .project-1, .project-2, .project-3 {
+    transform: translateY(30px) !important;
   }
-  to {
-    opacity: 1;
-    transform: translate(0, 0) rotate(0deg) scale(1);
+  .project-card.animate {
+    transform: translateY(0) !important;
   }
+  .about-image-container {
+    transform: translateY(-30px) !important;
+  }
+  .about-education-card {
+    transform: translateY(30px) !important;
+  }
+  .about-image-container.animate,
+  .about-education-card.animate {
+    transform: translateY(0) !important;
+  }
+  .contact-email {
+    transform: translateY(-30px) scale(0.9) !important;
+  }
+  .contact-linkedin {
+    transform: translateY(-30px) scale(0.9) !important;
+  }
+  .contact-github {
+    transform: translateY(-30px) scale(0.9) !important;
+  }
+  .contact-email.animate,
+  .contact-linkedin.animate,
+  .contact-github.animate {
+    transform: translateY(0) scale(1) !important;
+  }
+}
+
+.contact-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.6s ease-out;
 }

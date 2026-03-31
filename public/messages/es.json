@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Inicio",
     "about": "Sobre mí",
     "skills": "Habilidades", 
     "projects": "Proyectos",
@@ -10,14 +11,11 @@
     "title": "Estudiante de Ingeniería Informática",
     "description": "Apasionado por la tecnología y el desarrollo de soluciones innovadoras",
     "location": "Barcelona, España",
-    "viewProjects": "Ver Mis Proyectos",
-    "viewResume": "Ver Currículum",
-    "getInTouch": "Contacta Conmigo"
+    "viewResume": "Ver Currículum"
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Soy estudiante de Ingeniería Informática en la Universidad Pompeu Fabra de Barcelona. Tengo una gran pasión por la programación y la resolución de problemas. Disfruto enfrentándome tanto a proyectos académicos como personales, aprendiendo nuevas tecnologías y mejorando mis habilidades para crear soluciones prácticas e innovadoras.",
-    "education": "Educación",
+    "description": "Soy estudiante de Ingeniería Informática y me gusta resolver problemas reales con soluciones prácticas. Disfruto aprendiendo nuevas tecnologías y transformando ideas en productos útiles.",
     "degree": "Grado en Ingeniería Informática",
     "university": "Universidad Pompeu Fabra, Barcelona",
     "exchange": "Programa de Intercambio",
@@ -27,9 +25,7 @@
     "current": "Actual"
   },
   "skills": {
-    "title": "Habilidades Técnicas",
-    "mainTech": "Tecnologías Principales",
-    "additionalTech": "Tecnologías Adicionales"
+    "title": "Habilidades Técnicas"
   },
   "projects": {
     "title": "Proyectos Destacados",

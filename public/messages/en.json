@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Home",
     "about": "About",
     "skills": "Skills", 
     "projects": "Projects",
@@ -10,14 +11,11 @@
     "title": "Computer Science Student",
     "description": "Passionate about technology and building innovative solutions",
     "location": "Barcelona, Spain",
-    "viewProjects": "View My Projects",
-    "viewResume": "View Resume",
-    "getInTouch": "Get In Touch"
+    "viewResume": "View Resume"
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a Computer Science student at Pompeu Fabra University with a strong passion for programming and problem-solving. I enjoy tackling both academic and personal projects, learning new technologies, and improving my skills to create practical and innovative solutions.",
-    "education": "Education",
+    "description": "I'm a Computer Science student focused on solving real problems with practical solutions. I enjoy learning new technologies and turning ideas into useful products.",
     "degree": "Bachelor in Computer Science",
     "university": "Pompeu Fabra University, Barcelona",
     "exchange": "Exchange Program",
@@ -27,9 +25,7 @@
     "current": "Current"
   },
   "skills": {
-    "title": "Technical Skills",
-    "mainTech": "Main Technologies",
-    "additionalTech": "Additional Technologies"
+    "title": "Technical Skills"
   },
   "projects": {
     "title": "Featured Projects",

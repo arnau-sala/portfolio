@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Inici",
     "about": "Sobre mi",
     "skills": "Habilitats", 
     "projects": "Projectes",
@@ -10,14 +11,11 @@
     "title": "Estudiant d'Enginyeria Informàtica",
     "description": "Apassionat per la tecnologia i el desenvolupament de solucions innovadores",
     "location": "Barcelona",
-    "viewProjects": "Els Meus Projectes",
-    "viewResume": "Veure Currículum",
-    "getInTouch": "Contacta Amb Mi"
+    "viewResume": "Veure Currículum"
   },
   "about": {
     "title": "Sobre Mi",
-    "description": "Soc estudiant d'Enginyeria Informàtica a la Universitat Pompeu Fabra de Barcelona. Tinc una gran passió per la programació i la resolució de problemes. M'agrada enfrontar-me tant a projectes acadèmics com personals, aprendre a utilitzar noves tecnologies i millorar les meves habilitats per crear solucions pràctiques i innovadores.",
-    "education": "Educació",
+    "description": "Soc estudiant d'Enginyeria Informàtica i m'agrada resoldre problemes reals amb solucions pràctiques. Gaudeixo aprenent noves tecnologies i transformant idees en productes útils.",
     "degree": "Grau en Enginyeria Informàtica",
     "university": "Universitat Pompeu Fabra, Barcelona",
     "exchange": "Programa d'Intercanvi",
@@ -27,9 +25,7 @@
     "current": "Actual"
   },
   "skills": {
-    "title": "Habilitats Tècniques",
-    "mainTech": "Tecnologies Principals",
-    "additionalTech": "Tecnologies Addicionals"
+    "title": "Habilitats Tècniques"
   },
   "projects": {
     "title": "Projectes Destacats",
