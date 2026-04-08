@@ -29,6 +29,7 @@ const BENTO_SKILLS = [
   { name: 'SQL',        iconPath: '/icons/sql.png',        size: 4, area: 'sq' },
   { name: 'C',          iconPath: '/icons/c.png',          size: 4, area: 'cc' },
 ];
+const SKILL_ICONS_VERSION = '20260401';
 
 type SkillSize = 1 | 2 | 3 | 4 | 5;
 
@@ -385,7 +386,7 @@ export default function HomePage() {
                       key={skill.name}
                       id={skill.name}
                       name={skill.name}
-                      iconSrc={getAssetPath(skill.iconPath)}
+                      iconSrc={getAssetPath(`${skill.iconPath}?v=${SKILL_ICONS_VERSION}`)}
                       iconAlt={skill.name}
                       isActive={activeMobileSkill === skill.name}
                       onToggle={(id) => setActiveMobileSkill(prev => (prev === id ? null : id))}
