@@ -422,6 +422,14 @@ export default function HomePage() {
                   launchUrl: 'https://arnau-sala.github.io/pass-side/'
                 },
                 {
+                  title: t('projects.smartTruckCopilot.title'),
+                  description: t('projects.smartTruckCopilot.description'),
+                  tech: t('projects.smartTruckCopilot.tags'),
+                  github: 'https://github.com/arnau-sala/sanHackobo',
+                  icon: getAssetPath('/icons/SmartTruckCopilot.png'),
+                  launchUrl: 'https://sanhackobo.vercel.app/'
+                },
+                {
                   title: t('projects.movieMatch.title'),
                   description: t('projects.movieMatch.description'),
                   tech: t('projects.movieMatch.tags'),
@@ -435,13 +443,6 @@ export default function HomePage() {
                   tech: t('projects.examGrader.tags'),
                   github: 'https://github.com/arnau-sala/exam-grader.git',
                   icon: getAssetPath('/icons/exam.png')
-                },
-                {
-                  title: t('projects.vladijoc.title'),
-                  description: t('projects.vladijoc.description'),
-                  tech: t('projects.vladijoc.tags'),
-                  github: 'https://github.com/arnau-sala/study-spark.git',
-                  icon: getAssetPath('/icons/studyspark.png')
                 }
               ].map((project, index) => (
                 <GlowCard key={index} customSize className={`project-card project-${index} rounded-2xl`}>

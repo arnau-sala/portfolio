@@ -32,23 +32,23 @@
     "description": "Some of my academic and personal projects showcasing my programming skills and passion. Click to view on GitHub.",
     "passSide": {
       "title": "Pass Side",
-      "description": "Personal project made from scratch, implementing logics and algorithms to create an original board game that combines strategy and fun.",
+      "description": "Original board game with strategy and fun.",
       "tags": ["JavaScript", "Webside", "Game Development"]
     },
     "movieMatch": {
       "title": "MovieMatch",
-      "description": "Web application built with Streamlit for discovering movies using the TMDB API, featuring search, filtering, and personalized recommendations.",
+      "description": "Streamlit app for discovering movies.",
       "tags": ["Python", "Streamlit", "API Integration"]
     },
     "examGrader": {
       "title": "Exam Grader", 
-      "description": "Developed an automated tool in C for grading multiple-choice exams from scanned images as a side project.",
+      "description": "C tool for grading scanned exams.",
       "tags": ["C", "Algorithms", "Efficiency"]
     },
-    "vladijoc": {
-      "title": "Study Spark (Hackathon Prototype)",
-      "description": "Built at Glovo's AI Summit Hackathon: summarizes notes, creates quizzes, and generates explainer videos with AI.",
-      "tags": ["Hackathon", "Prototype", "AI"]
+    "smartTruckCopilot": {
+      "title": "Smart Truck Copilot",
+      "description": "Smart logistics prototype with AI driver assistance and truck loading.",
+      "tags": ["Hackathon", "2nd Prize", "Voice AI"]
     }
   },
   "contact": {

@@ -32,23 +32,23 @@
     "description": "Alguns dels meus projectes acadèmics i personals que mostren les meves habilitats de programació i passió. Fes clic per veure a GitHub.",
     "passSide": {
       "title": "Pass Side",
-      "description": "Projecte personal fet des de zero, implementant lògiques i algoritmes per crear un joc de taula original que combina estratègia i diversió.",
+      "description": "Joc de taula original amb estratègia i diversió.",
       "tags": ["JavaScript", "Pàgina Web", "Desenvolupament de Jocs"]
     },
     "movieMatch": {
       "title": "MovieMatch",
-      "description": "Aplicació web desenvolupada amb Streamlit per descobrir pel·lícules utilitzant l'API de TMDB, amb cerca, filtrat i recomanacions personalitzades.",
+      "description": "Aplicació en Streamlit per descobrir pel·lícules.",
       "tags": ["Python", "Streamlit", "Integració API"]
     },
     "examGrader": {
       "title": "Exam Grader", 
-      "description": "Vaig desenvolupar una eina automatitzada en C per qualificar exàmens d'opció múltiple des d'imatges escanejades com a projecte personal.",
+      "description": "Eina en C per qualificar exàmens.",
       "tags": ["C", "Algoritmes", "Eficiència"]
     },
-    "vladijoc": {
-      "title": "Study Spark (Prototip de Hackathon)",
-      "description": "Creat al Hackathon AI Summit de Glovo: resumeix apunts, crea qüestionaris i genera vídeos explicatius amb IA.",
-      "tags": ["Hackathon", "Prototip", "IA"]
+    "smartTruckCopilot": {
+      "title": "Smart Truck Copilot",
+      "description": "Prototip de logística intel·ligent amb ajuda per veu i IA per al conductor.",
+      "tags": ["Hackathon", "2n premi", "IA de veu"]
     }
   },
   "contact": {
