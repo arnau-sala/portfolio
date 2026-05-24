@@ -51,9 +51,9 @@ The portfolio supports three languages with automatic language detection:
 - **Catalan** (`ca`)
 
 Resume files are automatically served based on the selected language:
-- `resume_en.pdf` for English
-- `resume_es.pdf` for Spanish
-- `resume_ca.pdf` for Catalan
+- `ArnauSala_Resume_EN.pdf` for English
+- `ArnauSala_Resume_ES.pdf` for Spanish
+- `ArnauSala_Resume_CAT.pdf` for Catalan
 
 ## 🎯 Getting Started
 

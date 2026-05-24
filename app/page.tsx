@@ -8,7 +8,7 @@ import { HoverGlowButton } from '../src/components/ui/HoverGlowButton';
 import { SkillClipCard } from '../src/components/ui/SkillClipCard';
 import { GlowCard } from '../src/components/ui/spotlight-card';
 import { useLanguage } from '../src/contexts/LanguageContext';
-import { getAssetPath } from '../src/utils/paths';
+import { getAssetPath, getResumeFileName } from '../src/utils/paths';
 
 const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact'] as const;
 
@@ -51,7 +51,7 @@ export default function HomePage() {
   const scrollLockTimer = useRef<ReturnType<typeof setTimeout>>(null);
   
   const getResumeUrl = () => {
-    return getAssetPath(`/Resume/resume_${currentLanguage}.pdf`);
+    return getAssetPath(`/Resume/${getResumeFileName(currentLanguage)}`);
   };
 
   const scrollToSection = (sectionId: string) => {
