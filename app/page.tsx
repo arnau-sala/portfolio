@@ -467,7 +467,7 @@ export default function HomePage() {
                     )) : null}
                   </div>
 
-                  {(index === 0 || index === 1) && project.launchUrl && (
+                  {project.launchUrl && (
                     <a
                       href={project.launchUrl}
                       target="_blank"
