@@ -30,8 +30,8 @@
   "projects": {
     "financeManager": {
       "title": "Finance Manager",
-      "description": "Aplicación de finanzas personales para seguir transacciones multidivisa y consultar sus análisis.",
-      "tags": ["React Native", "TypeScript", "Finanzas"]
+      "description": "App de finanzas personales para seguir divisas y transacciones.",
+      "tags": ["Aplicación Móvil", "React Native", "Finanzas Personales"]
     },
     "title": "Proyectos Destacados",
     "description": "Algunos de mis proyectos académicos y personales que muestran mis habilidades de programación y pasión. Haz clic para ver en GitHub.",

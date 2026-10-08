@@ -30,8 +30,8 @@
   "projects": {
     "financeManager": {
       "title": "Finance Manager",
-      "description": "Aplicació de finances personals per seguir transaccions multidivisa i consultar-ne les anàlisis.",
-      "tags": ["React Native", "TypeScript", "Finances"]
+      "description": "App de finances personals per seguir divises i transaccions.",
+      "tags": ["Aplicació Mòbil", "React Native", "Finances Personals"]
     },
     "title": "Projectes Destacats",
     "description": "Alguns dels meus projectes acadèmics i personals que mostren les meves habilitats de programació i passió. Fes clic per veure a GitHub.",

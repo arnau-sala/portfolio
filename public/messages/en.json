@@ -32,8 +32,8 @@
     "description": "Some of my academic and personal projects showcasing my programming skills and passion. Click to view on GitHub.",
     "financeManager": {
       "title": "Finance Manager",
-      "description": "Personal finance app for tracking multi-currency transactions and insights.",
-      "tags": ["React Native", "TypeScript", "Finance"]
+      "description": "Personal finance app for tracking currencies and transactions.",
+      "tags": ["Mobile App", "React Native", "Personal Finance"]
     },
     "passSide": {
       "title": "Pass Side",
