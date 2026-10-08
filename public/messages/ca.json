@@ -28,6 +28,11 @@
     "title": "Habilitats Tècniques"
   },
   "projects": {
+    "financeManager": {
+      "title": "Finance Manager",
+      "description": "Aplicació de finances personals per seguir transaccions multidivisa i consultar-ne les anàlisis.",
+      "tags": ["React Native", "TypeScript", "Finances"]
+    },
     "title": "Projectes Destacats",
     "description": "Alguns dels meus projectes acadèmics i personals que mostren les meves habilitats de programació i passió. Fes clic per veure a GitHub.",
     "passSide": {
@@ -39,11 +44,6 @@
       "title": "MovieMatch",
       "description": "Aplicació en Streamlit per descobrir pel·lícules.",
       "tags": ["Python", "Streamlit", "Integració API"]
-    },
-    "examGrader": {
-      "title": "Exam Grader", 
-      "description": "Eina en C per qualificar exàmens.",
-      "tags": ["C", "Algoritmes", "Eficiència"]
     },
     "smartTruckCopilot": {
       "title": "Smart Truck Copilot",

@@ -414,12 +414,12 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
               {[
                 {
-                  title: t('projects.passSide.title'),
-                  description: t('projects.passSide.description'),
-                  tech: t('projects.passSide.tags'),
-                  github: 'https://github.com/arnau-sala/pass-side.git',
-                  icon: getAssetPath('/icons/pass-side.png'),
-                  launchUrl: 'https://arnau-sala.github.io/pass-side/'
+                  title: t('projects.financeManager.title'),
+                  description: t('projects.financeManager.description'),
+                  tech: t('projects.financeManager.tags'),
+                  github: 'https://github.com/arnau-sala/finance-manager',
+                  icon: getAssetPath('/icons/financemanager.png'),
+                  launchUrl: 'https://financemanager-mobile.vercel.app'
                 },
                 {
                   title: t('projects.smartTruckCopilot.title'),
@@ -438,11 +438,12 @@ export default function HomePage() {
                   launchUrl: 'https://movie-matchr.streamlit.app/'
                 },
                 {
-                  title: t('projects.examGrader.title'),
-                  description: t('projects.examGrader.description'),
-                  tech: t('projects.examGrader.tags'),
-                  github: 'https://github.com/arnau-sala/exam-grader.git',
-                  icon: getAssetPath('/icons/exam.png')
+                  title: t('projects.passSide.title'),
+                  description: t('projects.passSide.description'),
+                  tech: t('projects.passSide.tags'),
+                  github: 'https://github.com/arnau-sala/pass-side.git',
+                  icon: getAssetPath('/icons/pass-side.png'),
+                  launchUrl: 'https://arnau-sala.github.io/pass-side/'
                 }
               ].map((project, index) => (
                 <GlowCard key={index} customSize className={`project-card project-${index} rounded-2xl`}>

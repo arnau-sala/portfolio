@@ -114,7 +114,6 @@ This project uses icons from various sources. Attribution is provided as require
 - **JavaScript**: [Javascript icon by Icons8](https://icons8.com/icon/108784/javascript)
 - **MATLAB**: [MATLAB icon by Icons8](https://icons8.com/icon/r5Y16PcDkoWI/matlab)
 - **Chess**: [Chess.com icon by Icons8](https://icons8.com/icon/C5LTcmsc3cr0/chess-com)
-- **Exam**: [Quiz icon by Icons8](https://icons8.com/icon/osWiBOYLPXb2/quiz)
 - **User Groups**: [User Groups icon by Icons8](https://icons8.com/icon/9542/user-groups)
 - **Dices**: [Dices icon by Icons8](https://icons8.com/icon/STTzY5IFwQkK/dices)
 
